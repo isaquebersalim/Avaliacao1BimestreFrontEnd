@@ -46,3 +46,33 @@ form button[type="submit"]{
 form button[type="submit"]:hover{
     background: #3695b3;
 }
+
+.listaDeGastos{
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listaDeGastos button {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.listaDeGastos button:hover {
+    background: #c9302c;
+}
+
+.total {
+    font-size: 1.5em;
+    text-align: right;
+    margin-top: 20px;
+    color: #333;
+}
