@@ -93,8 +93,7 @@ ul#listaDeGastos {
 }
 
 .listaDeGastos button {
-    background: #ffc107;
-    color: #333;
+    color: white;
     border: none;
     padding: 8px 15px;
     cursor: pointer;
@@ -103,7 +102,21 @@ ul#listaDeGastos {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.listaDeGastos button:hover {
+.listaDeGastos button:first-of-type {
+    background: #e74c3c;
+}
+
+.listaDeGastos button:first-of-type:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+.listaDeGastos button:last-of-type {
+    background: #ffc107;
+    color: #333;
+}
+
+.listaDeGastos button:last-of-type:hover {
     background-color: #e0a800;
     transform: translateY(-1px);
 }
