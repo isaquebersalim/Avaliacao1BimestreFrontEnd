@@ -23,16 +23,45 @@ function removeLista(id) {
     calculateTotal();
 }
 
+function editarLista(id) {
+    const item = lista.find(item => item.id === id); // Encontra o item pelo ID
+    if (item) {
+        // Preenche os campos do formulário com os dados do item
+        document.getElementById('descricao').value = item.descricao;
+        document.getElementById('valor').value = item.valor;
+        document.getElementById('categoria').value = item.categoria;
+
+        // Remove o item da lista para ser atualizado ao salvar
+        removeLista(id);
+    }
+}
+
 function updateLista() {
     const listaElement = document.getElementById("listaDeGastos"); // Corrigido o ID
     listaElement.innerHTML = ""; // Limpa a lista atual
     lista.forEach(item => {
         const li = document.createElement("li");
+
+        // Adiciona a classe "valor-alto" para valores acima de R$100,00
+        li.className = "listaDeGastos";
+        if (item.valor > 100) {
+            li.classList.add("valor-alto");
+        }
+
         li.innerText = `${item.descricao} - R$ ${item.valor.toFixed(2)} (${item.categoria})`;
+
+        // Botão de remover
         const removeButton = document.createElement("button");
         removeButton.innerText = "Remover";
         removeButton.onclick = () => removeLista(item.id);
         li.appendChild(removeButton);
+
+        // Botão de editar
+        const editButton = document.createElement("button");
+        editButton.innerText = "Editar";
+        editButton.onclick = () => editarLista(item.id);
+        li.appendChild(editButton);
+
         listaElement.appendChild(li);
     });
 }
