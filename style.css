@@ -76,3 +76,9 @@ form button[type="submit"]:hover{
     margin-top: 20px;
     color: #333;
 }
+
+
+.valor-alto {
+    color: red;
+    font-weight: bold;
+}
